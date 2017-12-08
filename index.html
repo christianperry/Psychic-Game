@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<p>Guessing game!</p>
+
+	<script type="text/javascript">
+		var letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q,','r','s','t','u','v','w','x','y','z']
+		var counter = 0;
+		var maxGuesses = 10;
+
+		var rando = Math.floor(Math.random() * 26);
+
+		var answer = letters[rando];
+
+		console.log(answer);
+
+		while (attempt != answer) {
+			var attempt = prompt("Please guess a letter of the alphabet. (Max 10 attempts.)");
+			counter++;
+
+			if (counter > maxGuesses) {
+				document.write("<p>Game over!</p>");
+				document.write("<p>You have no more attempts.</p>");
+				break;
+				document.write("<p>The correct letter was " + answer + ".</p>")
+			}
+
+			if (attempt === answer) {
+				document.write("Congrats! You have guessed correctly.");
+				document.write("<p>The correct letter was " + answer + ".</p>");
+				document.write("<p> It took you " + counter + " attempts.</p>");
+			}
+
+		}
+
+	</script>
+	
+</body>
+</html>
